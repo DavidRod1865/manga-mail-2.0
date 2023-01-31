@@ -2,6 +2,7 @@ const button = document.querySelector('.submit')
 const shippingFee = document.querySelector('.shipping')
 const paypalFee = document.querySelector('.paypal')
 
+
 class Books {
     constructor(weight, price) {
         // console.log('this', this)
@@ -23,6 +24,7 @@ class Books {
         }   
         else paypalFee.innerText = `0.00`
     }
+
 }
 
 function getValues() {
@@ -33,4 +35,17 @@ function getValues() {
     packaged_Books.calPayPal();
 }
 
-button.addEventListener('click', getValues)
+function appear() {
+    if ($('div').hide()) $('div').show();
+    else return false;
+
+}function fade() {
+    if ($('.fade').css('opacity') == 0) $('.fade').css('opacity', 1);
+    else return false;
+}
+
+button.addEventListener('click', () => {
+    getValues(),
+    appear(),
+    fade()
+})
