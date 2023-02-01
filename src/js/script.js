@@ -1,6 +1,8 @@
 const button = document.querySelector('.submit')
 const shippingFee = document.querySelector('.shipping')
 const paypalFee = document.querySelector('.paypal')
+const excludingFees = document.querySelector('.excludingFees')
+const includingFees = document.querySelector('.includingFees')
 
 
 class Books {
@@ -23,6 +25,11 @@ class Books {
             paypalFee.innerText = ((this.price * .0349) + 0.49).toFixed(2)
         }   
         else paypalFee.innerText = `0.00`
+    }
+
+    calProfit = () => {
+        excludingFees.innerText = this.price - (this.calShipping + this.calPayPal)
+        includingFees.innerText = this.price + (this.calShipping + this.calPayPal)
     }
 
 }
