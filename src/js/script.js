@@ -4,28 +4,23 @@ const paypalFee = document.querySelector('.paypal')
 const excludingFees = document.querySelector('.excludingFees')
 const includingFees = document.querySelector('.includingFees')
 
-
 class Books {
     constructor(weight, price) {
-        // console.log('this', this)
         this.weight = Number(weight);
         this.price = Number((price).toFixed(2));
 
         //Calculates "USPS Shipping Rate" using Custom Media Mail API
-        this.calShipping = async () => {
-            await fetch(`https://media-mail-api.vercel.app/api/weight/${weight}`)
-                .then(res => res.json())
-                .then(data => { 
-                    shippingFee.innerText = Number(data)
-                    return data
-                })
-                .catch(err => alert(`Weight must be less than 70 Lbs.`))
-            
+        this.calShipping = () => {
+            if (weight <= 70 && weight > 0){
+                let uspsRate = +(0.67 * (weight - 1) + 3.49).toFixed(2)
+                shippingFee.innerText = uspsRate
+                return uspsRate
+            } else alert(`Weight must be less than 70 Lbs.`)
         };
         
         /*Calculates "Paypal Commission Fee" using calculation found at:
         https://www.paypal.com/us/webapps/mpp/merchant-fees*/
-        this.calPayPal =  async () => {
+        this.calPayPal = () => {
             if (Number(price) > 0){
                 let fee = Number(((price * .0349) + 0.49).toFixed(2))
                 paypalFee.innerText = fee
@@ -35,28 +30,39 @@ class Books {
                 paypalFee.innerText = "0.00"
                 return 0
             }
-        }
+        };
     }
-
-    calProfit = async () => {
-    let shipping = await this.calShipping();
-    let paypal = await this.calPayPal();
-    console.log(Number(shipping), typeof shipping)
-        excludingFees.innerText = Number(this.price - (shipping + paypal));
-        includingFees.innerText = Number(this.price + (paypal))
+    
+    //Calculates the user's profit before & after taxes
+    calProfit = () => {
+        excludingFees.innerText = (this.price - (this.calShipping() + this.calPayPal())).toFixed(2);
+        includingFees.innerText = (this.price + (this.calShipping() + this.calPayPal())).toFixed(2);
     };
-
+    
+    
 };
 
-async function getValues() {
+// let shippedPackage = {
+//     weight: +document.querySelector(".price").value,
+//     value: (+document.querySelector(".price").value).toFixed(2),
+//     uspsRate: packaged_Books.calShipping(),
+//     paypalFee: packaged_Books.calPayPal(),
+// }
+
+// storePackage = async () => {
+//     window.localStorage.setItem('Packages', JSON.stringify(shippedPackage));
+//     alert(shippedPackage);
+//     };
+
+function getValues() {
     let weight = +document.querySelector(".weight").value;
     let price = +document.querySelector(".price").value;
     const packaged_Books = new Books(weight, price);
-    await packaged_Books.calShipping();
-    await packaged_Books.calPayPal();
-    await packaged_Books.calProfit();
+    packaged_Books.calShipping();
+    packaged_Books.calPayPal();
+    packaged_Books.calProfit();
+    // storePackage();
 }
-
 
 function appear() {
     if ($('div').hide()) $('div').show();

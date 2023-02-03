@@ -30,15 +30,16 @@ body {
     transition: all 1.25s ease-in;
 }
 
-    .priceOne {
-        display: flex;
+    .priceOne, .packageField, .profitField {
+        display: flex !important;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 200px;
+        height: fit-content;
+        padding: 10px;
     }
 
-        .priceOne > span {
+        .priceOne > span, .profitField > span {
             margin: 10px;
             background-color: #fff;
             box-sizing: border-box;
@@ -46,14 +47,6 @@ body {
             box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
             padding: 1rem;
         } 
-
-    .packageField {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 200px;
-    }
 
         .packageField > input {
             margin: 10px;
@@ -106,3 +99,13 @@ body {
         .button-35:hover {
             box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
         }
+
+.history {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    line-height: 1.5;
+    border: black solid 3px;
+    border-radius: 7px;
+    background-color: #fff;
+}
