@@ -9,17 +9,16 @@ class Books {
         this.weight = Number(weight);
         this.price = Number((price).toFixed(2));
 
-        //Calculates "USPS Shipping Rate" using Custom Media Mail API
+        //Calculates "USPS Shipping Rate"
         this.calShipping = () => {
             if (weight <= 70 && weight > 0){
-                let uspsRate = +(0.67 * (weight - 1) + 3.49).toFixed(2)
+                let uspsRate = +(0.7 * (weight - 1) + 3.65).toFixed(2)
                 shippingFee.innerText = uspsRate
                 return uspsRate
             } else alert(`Weight must be less than 70 Lbs.`)
         };
         
-        /*Calculates "Paypal Commission Fee" using calculation found at:
-        https://www.paypal.com/us/webapps/mpp/merchant-fees*/
+        //Calculates "Paypal Commission Fee"
         this.calPayPal = () => {
             if (Number(price) > 0){
                 let fee = Number(((price * .0349) + 0.49).toFixed(2))
@@ -33,26 +32,13 @@ class Books {
         };
     }
     
-    //Calculates the user's profit before & after taxes
+    //Calculates the User's profit before & after taxes
     calProfit = () => {
         excludingFees.innerText = (this.price - (this.calShipping() + this.calPayPal())).toFixed(2);
         includingFees.innerText = (this.price + (this.calShipping() + this.calPayPal())).toFixed(2);
     };
     
-    
 };
-
-// let shippedPackage = {
-//     weight: +document.querySelector(".price").value,
-//     value: (+document.querySelector(".price").value).toFixed(2),
-//     uspsRate: packaged_Books.calShipping(),
-//     paypalFee: packaged_Books.calPayPal(),
-// }
-
-// storePackage = async () => {
-//     window.localStorage.setItem('Packages', JSON.stringify(shippedPackage));
-//     alert(shippedPackage);
-//     };
 
 function getValues() {
     let weight = +document.querySelector(".weight").value;
@@ -61,7 +47,6 @@ function getValues() {
     packaged_Books.calShipping();
     packaged_Books.calPayPal();
     packaged_Books.calProfit();
-    // storePackage();
 }
 
 function appear() {

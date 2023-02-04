@@ -5,12 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/css/styles.css">
-    <title>All-In Shipping & Transaction Fee Calculator</title>
+    <title>Media Mail Calculator</title>
 </head>
 <body>
-
+    
+    <div class="side"></div>
     <main class="main">
-
+        <section class="section1">
+            <div class="title">
+                <h1>Media Mail Calculator</h1>
+                <ul class="slogan">
+                    <h4>Instructions are simple!</h4>
+                    <li>Enter the Value</li>
+                    <li>Enter the Weight</li>
+                    <li>Get TWO RATES!</li>
+                </ul>
+            </div>
+        </section>
+        
         <div class="results fade">
             <div class="priceOne">
                 <span>Shipping Price: $<span class="shipping"></span></span>
@@ -23,7 +35,9 @@
         </div>
 
         <div class="packageField">
+            <span class="label">Weight in USD</span>
             <input type="text" name="weight" class="weight" placeholder="Enter Weight" minlength="1" maxlength="3">
+            <span class="label">Value in USD</span>
             <input type="text" name="value" class="price" placeholder="Enter Value" minlength="1" maxlength="7">
             <button class="submit button-35">Submit</button>
         </div>
@@ -36,6 +50,7 @@
         </div>
 
     </main>
+    <div class="side"></div>
 
     <script src="./src/js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
