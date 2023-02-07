@@ -11,44 +11,43 @@
 <body>
     
     <main class="main">
-        <section class="section1">
-            <div class="title">
-                <h1>Media Mail Calculator</h1>
-                <ul class="slogan">
-                    <h4>Instructions are simple!</h4>
-                    <li>Enter the Value</li>
-                    <li>Enter the Weight</li>
-                    <li>Get TWO RATES!</li>
-                </ul>
+
+        <section class="content">
+            <section class="section1">
+                <div class="title">
+                    <h1>Media Mail Calculator</h1>
+                    <ul class="slogan">
+                        <h4>Instructions are simple!</h4>
+                        <li>Enter the Value</li>
+                        <li>Enter the Weight</li>
+                        <li>Get TWO RATES!</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="results fade">
+                <div class="history">
+                    <div class="enteredValues">
+                        <span>Weight: $<span class="weightValue"></span></span>
+                        <span>Value: $<span class="valueValue"></span></span>
+                    </div>
+                    <span>U.S.P.S. Shipping Rate: $<span class="shipping"></span></span>
+                    <span>Paypal Commission Fee $<span class="paypal"></span></span> 
+                    <p>***Paypal Fee applies only if books are sold via Paypal</p>
+                    <span>Profit excluding fees: $<span class="excludingFees"></span></span>
+                    <span>Profit including fees: $<span class="includingFees"></span></span>
+                </div>
+            </div>
+
+            <div class="packageField">
+                <span class="label">Weight in USD</span>
+                <input type="text" name="weight" class="weight" placeholder="Enter Weight" minlength="1" maxlength="3">
+                <span class="label">Value in USD</span>
+                <input type="text" name="value" class="price" placeholder="Enter Value" minlength="1" maxlength="7">
+                <button class="submit button-35">Submit</button>
             </div>
         </section>
-        
-        <div class="results fade">
-            <div class="history">
-                <span>Weight: $<span class="weightValue"></span></span>
-                <span>Value: $<span class="valueValue"></span></span>
-                <span>U.S.P.S. Shipping Rate: $<span class="shipping"></span></span>
-                <span>Paypal Commission Fee $<span class="paypal"></span></span> 
-                <p>***Paypal Fee applies only if books are sold via Paypal</p>
-            </div>
-            <div class="priceOne">
-                <span>Shipping Price: $<span class="shipping"></span></span>
-                <span>PayPal Price: $<span class="paypal"></span></span>
-            </div>
-            <div class="profitField">
-                <span>Profit excluding fees: $<span class="excludingFees"></span></span>
-                <span>Profit including fees: $<span class="includingFees"></span></span>
-            </div>
-        </div>
 
-        <div class="packageField">
-            <span class="label">Weight in USD</span>
-            <input type="text" name="weight" class="weight" placeholder="Enter Weight" minlength="1" maxlength="3">
-            <span class="label">Value in USD</span>
-            <input type="text" name="value" class="price" placeholder="Enter Value" minlength="1" maxlength="7">
-            <button class="submit button-35">Submit</button>
-        </div>
-        
     </main>
     <div class="bg"></div>
     <div class="bg bg2"></div>
