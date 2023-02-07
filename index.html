@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/background.css">
     <title>Media Mail Calculator</title>
 </head>
 <body>
     
-    <div class="side"></div>
     <main class="main">
         <section class="section1">
             <div class="title">
@@ -24,6 +24,13 @@
         </section>
         
         <div class="results fade">
+            <div class="history">
+                <span>Weight: $<span class="weightValue"></span></span>
+                <span>Value: $<span class="valueValue"></span></span>
+                <span>U.S.P.S. Shipping Rate: $<span class="shipping"></span></span>
+                <span>Paypal Commission Fee $<span class="paypal"></span></span> 
+                <p>***Paypal Fee applies only if books are sold via Paypal</p>
+            </div>
             <div class="priceOne">
                 <span>Shipping Price: $<span class="shipping"></span></span>
                 <span>PayPal Price: $<span class="paypal"></span></span>
@@ -41,17 +48,13 @@
             <input type="text" name="value" class="price" placeholder="Enter Value" minlength="1" maxlength="7">
             <button class="submit button-35">Submit</button>
         </div>
-
-        <div class="history">
-            <span>Weight: $<span class="storedWeight"></span></span>
-            <span>Value: $<span class="storedValue"></span></span>
-            <span>U.S.P.S. Shipping Rate: $<span class="storedUSPS"></span></span>
-            <span>Paypal Commission Fee $<span class="storedPaypal"></span> (If books are sold via Paypal)</span>
-        </div>
-
+        
     </main>
-    <div class="side"></div>
-
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg4"></div>
+    <div class="bg bg3"></div>
+    
     <script src="./src/js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </body>
