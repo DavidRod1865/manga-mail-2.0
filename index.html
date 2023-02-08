@@ -12,48 +12,56 @@
     
     <main class="main">
 
+        <section class="section1">
+            <div class="title">
+                <h1>Media Mail Calculator</h1>
+                <ul class="slogan">
+                    <h4>Instructions are simple!</h4>
+                    <li>Enter the Value!</li>
+                    <li>Enter the Weight!</li>
+                    <li>Get TWO RATES!</li>
+                </ul>
+            </div>
+        </section>
+        
         <section class="content">
-            <section class="section1">
-                <div class="title">
-                    <h1>Media Mail Calculator</h1>
-                    <ul class="slogan">
-                        <h4>Instructions are simple!</h4>
-                        <li>Enter the Value</li>
-                        <li>Enter the Weight</li>
-                        <li>Get TWO RATES!</li>
-                    </ul>
-                </div>
-            </section>
 
             <div class="results fade">
                 <div class="history">
                     <div class="enteredValues">
-                        <span>Weight: $<span class="weightValue"></span></span>
-                        <span>Value: $<span class="valueValue"></span></span>
+                        <!-- <span>Value: $<span class="valueValue"> </span></span>
+                        <span>Weight:&nbsp<span class="weightValue"></span>&nbspLbs.</span> -->
+                        <span>U.S.P.S. Media Mail© Rate: $<span class="shipping"></span></span>
+                        <span>PayPal© Payment Transfer Fee: $<span class="paypal"></span></span> 
+                        <span>Estimated profit after fees (at current value): $<span class="excludingFees"></span></span>
+                        <span>Suggested sell price (fees included): $<span class="includingFees"></span></span>
                     </div>
-                    <span>U.S.P.S. Shipping Rate: $<span class="shipping"></span></span>
-                    <span>Paypal Commission Fee $<span class="paypal"></span></span> 
-                    <p>***Paypal Fee applies only if books are sold via Paypal</p>
-                    <span>Profit excluding fees: $<span class="excludingFees"></span></span>
-                    <span>Profit including fees: $<span class="includingFees"></span></span>
+                    <p class="disclaimer">Note: Paypal Fee only applies for transactions done via Paypal.</p>
                 </div>
             </div>
 
             <div class="packageField">
-                <span class="label">Weight in USD</span>
-                <input type="text" name="weight" class="weight" placeholder="Enter Weight" minlength="1" maxlength="3">
                 <span class="label">Value in USD</span>
                 <input type="text" name="value" class="price" placeholder="Enter Value" minlength="1" maxlength="7">
+                <span class="label">Weight in Lbs.</span>
+                <span class=disclaimer>(Less than 70 Lbs.)</span>
+                <input type="text" name="weight" class="weight" placeholder="Enter Weight" minlength="1" maxlength="3">
                 <button class="submit button-35">Submit</button>
             </div>
+            
+            
         </section>
-
+        
+        <footer>
+        <p class="disclaimer">All totals are estimates and are subject to change at time of transaction. U.S.P.S. media mail service and rates are limited to the United States. Service to all 50 states. Please visit <a href="https://www.usps.com/ship/mail-shipping-services.htm">United States Postal Service</a> website for more information.</p>
+        <span class="disclaimer"><a href="http://davecodes.tech">DaveCodes.Tech</a>© All Rights Reserved.</span>
+        </footer>
     </main>
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg4"></div>
     <div class="bg bg3"></div>
-    
+
     <script src="./src/js/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </body>

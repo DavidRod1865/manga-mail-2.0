@@ -3,8 +3,8 @@ const shippingFee = document.querySelector('.shipping')
 const paypalFee = document.querySelector('.paypal')
 const excludingFees = document.querySelector('.excludingFees')
 const includingFees = document.querySelector('.includingFees')
-const weightValue = document.querySelector('.weightValue')
-const valueValue = document.querySelector('.valueValue')
+// const weightValue = document.querySelector('.weightValue')
+// const valueValue = document.querySelector('.valueValue')
 
 class Books {
     constructor(weight, price) {
@@ -38,8 +38,8 @@ class Books {
     
     //Calculates the User's profit before & after taxes
     calProfit = () => {
-        weightValue.innerText = (+document.querySelector(".weight").value).toFixed(2);
-        valueValue.innerText = (+document.querySelector(".price").value).toFixed(2);
+        // weightValue.innerText = (+document.querySelector(".weight").value).toFixed(2);
+        // valueValue.innerText = (+document.querySelector(".price").value).toFixed(2);
         excludingFees.innerText = (this.price - (this.calShipping() + this.calPayPal())).toFixed(2);
         includingFees.innerText = (this.price + (this.calShipping() + this.calPayPal())).toFixed(2);
     };
